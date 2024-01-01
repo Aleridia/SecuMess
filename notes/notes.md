@@ -62,6 +62,12 @@ Metasploit :
   * Command injection :
     * Cheatsheet : https://github.com/payloadbox/command-injection-payload-list
   * SQL injection :
+    * In-Band SQLi : get the result in the browser. Get some errors : use `'` or `"` 
+    * Blind SQLi : 
+      * Auth : Bypass logins, mostly put `' 1=1;--` in the command 
+      * Boolean based : when have two values in return to confirm the injection worked. Can explore the db using like. Ex : `' UNION SELECT 1,2,3 where database() like 's%';--` to search for the db name
+      * Time based : with SLEEP(x), will be executed only if the UNION is working
+      * Out of band : 2 communications channels. Ex : injection via website but DB answering on the attackers machine
     * 
  * Cloud environment : 
    * IP with sensitive environment : 169.254.169.254
